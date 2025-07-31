@@ -1,0 +1,102 @@
+[
+  {
+    "Id": 1,
+    "name": "Wireless Headphones",
+    "sku": "WH-001",
+    "category": "Electronics",
+    "price": 79.99,
+    "quantity": 25,
+    "minStock": 10,
+    "lastUpdated": "2024-01-15T10:30:00Z"
+  },
+  {
+    "Id": 2,
+    "name": "Coffee Mug",
+    "sku": "CM-002",
+    "category": "Kitchenware",
+    "price": 12.99,
+    "quantity": 45,
+    "minStock": 15,
+    "lastUpdated": "2024-01-14T14:20:00Z"
+  },
+  {
+    "Id": 3,
+    "name": "Bluetooth Speaker",
+    "sku": "BS-003",
+    "category": "Electronics",
+    "price": 45.99,
+    "quantity": 8,
+    "minStock": 10,
+    "lastUpdated": "2024-01-16T09:15:00Z"
+  },
+  {
+    "Id": 4,
+    "name": "Desk Lamp",
+    "sku": "DL-004",
+    "category": "Furniture",
+    "price": 29.99,
+    "quantity": 0,
+    "minStock": 5,
+    "lastUpdated": "2024-01-13T16:45:00Z"
+  },
+  {
+    "Id": 5,
+    "name": "Water Bottle",
+    "sku": "WB-005",
+    "category": "Sports",
+    "price": 18.99,
+    "quantity": 32,
+    "minStock": 20,
+    "lastUpdated": "2024-01-15T11:30:00Z"
+  },
+  {
+    "Id": 6,
+    "name": "Notebook Set",
+    "sku": "NS-006",
+    "category": "Stationery",
+    "price": 15.99,
+    "quantity": 67,
+    "minStock": 25,
+    "lastUpdated": "2024-01-14T13:20:00Z"
+  },
+  {
+    "Id": 7,
+    "name": "Phone Case",
+    "sku": "PC-007",
+    "category": "Accessories",
+    "price": 24.99,
+    "quantity": 18,
+    "minStock": 15,
+    "lastUpdated": "2024-01-16T08:10:00Z"
+  },
+  {
+    "Id": 8,
+    "name": "Fitness Tracker",
+    "sku": "FT-008",
+    "category": "Electronics",
+    "price": 89.99,
+    "quantity": 12,
+    "minStock": 8,
+    "lastUpdated": "2024-01-15T15:40:00Z"
+  },
+  {
+    "Id": 9,
+    "name": "Ceramic Vase",
+    "sku": "CV-009",
+    "category": "Home Decor",
+    "price": 34.99,
+    "quantity": 6,
+    "minStock": 8,
+    "lastUpdated": "2024-01-14T12:25:00Z"
+  },
+  {
+    "Id": 10,
+    "name": "Gaming Mouse",
+    "sku": "GM-010",
+    "category": "Electronics",
+    "price": 55.99,
+    "quantity": 22,
+    "minStock": 12,
+    "lastUpdated": "2024-01-16T10:50:00Z"
+  }
+]

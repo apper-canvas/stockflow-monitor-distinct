@@ -1,0 +1,42 @@
+[
+  {
+    "Id": 1,
+    "productId": 1,
+    "type": "sale",
+    "quantity": 2,
+    "reason": "Customer purchase",
+    "timestamp": "2024-01-16T14:30:00Z"
+  },
+  {
+    "Id": 2,
+    "productId": 3,
+    "type": "adjustment",
+    "quantity": -5,
+    "reason": "Damaged items removed",
+    "timestamp": "2024-01-16T10:15:00Z"
+  },
+  {
+    "Id": 3,
+    "productId": 2,
+    "type": "sale",
+    "quantity": 1,
+    "reason": "Customer purchase",
+    "timestamp": "2024-01-16T09:45:00Z"
+  },
+  {
+    "Id": 4,
+    "productId": 5,
+    "type": "restock",
+    "quantity": 20,
+    "reason": "New inventory received",
+    "timestamp": "2024-01-15T16:20:00Z"
+  },
+  {
+    "Id": 5,
+    "productId": 8,
+    "type": "sale",
+    "quantity": 3,
+    "reason": "Customer purchase",
+    "timestamp": "2024-01-15T13:10:00Z"
+  }
+]

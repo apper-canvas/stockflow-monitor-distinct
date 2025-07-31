@@ -1,0 +1,37 @@
+[
+  {
+    "Id": 1,
+    "name": "Electronics",
+    "color": "#3b82f6"
+  },
+  {
+    "Id": 2,
+    "name": "Kitchenware",
+    "color": "#10b981"
+  },
+  {
+    "Id": 3,
+    "name": "Furniture",
+    "color": "#f59e0b"
+  },
+  {
+    "Id": 4,
+    "name": "Sports",
+    "color": "#ef4444"
+  },
+  {
+    "Id": 5,
+    "name": "Stationery",
+    "color": "#8b5cf6"
+  },
+  {
+    "Id": 6,
+    "name": "Accessories",
+    "color": "#06b6d4"
+  },
+  {
+    "Id": 7,
+    "name": "Home Decor",
+    "color": "#ec4899"
+  }
+]
