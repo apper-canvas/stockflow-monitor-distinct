@@ -20,15 +20,15 @@ const ProductForm = ({ product, onSubmit, onCancel }) => {
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  useEffect(() => {
+useEffect(() => {
     if (product) {
       setFormData({
-        name: product.name || "",
-        sku: product.sku || "",
-        category: product.category || "",
-        price: product.price?.toString() || "",
-        quantity: product.quantity?.toString() || "",
-        minStock: product.minStock?.toString() || "10"
+        name: product.Name || "",
+        sku: product.sku_c || "",
+        category: product.category_c || "",
+        price: product.price_c?.toString() || "",
+        quantity: product.quantity_c?.toString() || "",
+        minStock: product.minStock_c?.toString() || "10"
       });
     }
   }, [product]);
@@ -146,9 +146,9 @@ const ProductForm = ({ product, onSubmit, onCancel }) => {
               onChange={(e) => handleChange("category", e.target.value)}
             >
               <option value="">Select a category</option>
-              {categories.map((category) => (
-                <option key={category.Id} value={category.name}>
-                  {category.name}
+{categories.map((category) => (
+                <option key={category.Id} value={category.Name}>
+                  {category.Name}
                 </option>
               ))}
             </Select>

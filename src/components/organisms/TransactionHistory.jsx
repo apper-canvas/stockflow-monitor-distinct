@@ -26,9 +26,9 @@ const TransactionHistory = ({ productData }) => {
     }
   };
 
-  const getProductName = (productId) => {
+const getProductName = (productId) => {
     const product = productData.find(p => p.Id === productId);
-    return product ? product.name : "Unknown Product";
+    return product ? product.Name : "Unknown Product";
   };
 
   const getTransactionIcon = (type) => {
@@ -44,7 +44,7 @@ const TransactionHistory = ({ productData }) => {
     }
   };
 
-  const getTransactionVariant = (type) => {
+const getTransactionVariant = (type) => {
     switch (type) {
       case "sale":
         return "success";
@@ -111,33 +111,33 @@ const TransactionHistory = ({ productData }) => {
                 className="flex items-center justify-between p-3 border border-slate-200 rounded-lg hover:bg-gradient-to-r hover:from-slate-50 hover:to-blue-50 transition-all duration-200"
               >
                 <div className="flex items-center gap-3">
-                  <div className="p-2 rounded-full bg-gradient-to-r from-slate-100 to-slate-200">
+<div className="p-2 rounded-full bg-gradient-to-r from-slate-100 to-slate-200">
                     <ApperIcon 
-                      name={getTransactionIcon(transaction.type)} 
+                      name={getTransactionIcon(transaction.type_c)} 
                       className="h-4 w-4 text-slate-600" 
                     />
                   </div>
                   <div>
                     <p className="font-medium text-slate-900">
-                      {getProductName(transaction.productId)}
+                      {getProductName(transaction.productId_c)}
                     </p>
-                    <p className="text-sm text-slate-600">{transaction.reason}</p>
+                    <p className="text-sm text-slate-600">{transaction.reason_c}</p>
                   </div>
                 </div>
                 
                 <div className="text-right">
-                  <div className="flex items-center gap-2 mb-1">
-                    <Badge variant={getTransactionVariant(transaction.type)}>
-                      {transaction.type}
+<div className="flex items-center gap-2 mb-1">
+                    <Badge variant={getTransactionVariant(transaction.type_c)}>
+                      {transaction.type_c}
                     </Badge>
                     <span className={`font-semibold ${
-                      transaction.quantity > 0 ? "text-green-600" : "text-red-600"
+                      transaction.quantity_c > 0 ? "text-green-600" : "text-red-600"
                     }`}>
-                      {transaction.quantity > 0 ? "+" : ""}{transaction.quantity}
+                      {transaction.quantity_c > 0 ? "+" : ""}{transaction.quantity_c}
                     </span>
                   </div>
                   <p className="text-xs text-slate-500">
-                    {format(new Date(transaction.timestamp), "MMM d, h:mm a")}
+                    {format(new Date(transaction.timestamp_c), "MMM d, h:mm a")}
                   </p>
                 </div>
               </div>

@@ -47,23 +47,23 @@ const CategorySidebar = ({ selectedCategory, onCategorySelect, productsByCategor
           </span>
         </Button>
 
-        {categories.map((category) => {
-          const count = productsByCategory[category.name] || 0;
-          const isSelected = selectedCategory === category.name;
+{categories.map((category) => {
+          const count = productsByCategory[category.Name] || 0;
+          const isSelected = selectedCategory === category.Name;
           
           return (
             <Button
               key={category.Id}
               variant={isSelected ? "primary" : "ghost"}
               className="w-full justify-between h-10"
-              onClick={() => onCategorySelect(category.name)}
+              onClick={() => onCategorySelect(category.Name)}
             >
               <span className="flex items-center gap-2">
                 <div 
                   className="w-3 h-3 rounded-full border-2 border-white shadow-sm"
-                  style={{ backgroundColor: category.color }}
+                  style={{ backgroundColor: category.color_c }}
                 />
-                {category.name}
+                {category.Name}
               </span>
               <span className={`text-xs px-2 py-1 rounded-full ${
                 isSelected 

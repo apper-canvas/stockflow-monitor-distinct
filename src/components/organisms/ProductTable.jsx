@@ -66,7 +66,7 @@ const ProductTable = ({ products, onEdit, onDelete, onQuickSale, onStockAdjust }
             </tr>
           </thead>
           <tbody className="bg-white divide-y divide-slate-100">
-            {sortedProducts.map((product, index) => (
+{sortedProducts.map((product, index) => (
               <tr 
                 key={product.Id} 
                 className={`hover:bg-gradient-to-r hover:from-slate-50 hover:to-blue-50 transition-all duration-200 ${
@@ -74,35 +74,35 @@ const ProductTable = ({ products, onEdit, onDelete, onQuickSale, onStockAdjust }
                 }`}
               >
                 <td className="px-6 py-4 whitespace-nowrap">
-                  <div className="font-medium text-slate-900">{product.name}</div>
+                  <div className="font-medium text-slate-900">{product.Name}</div>
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap">
                   <span className="text-sm text-slate-600 font-mono bg-slate-100 px-2 py-1 rounded">
-                    {product.sku}
+                    {product.sku_c}
                   </span>
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap">
-                  <span className="text-sm text-slate-600">{product.category}</span>
+                  <span className="text-sm text-slate-600">{product.category_c}</span>
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap">
                   <span className="text-sm font-semibold text-slate-900">
-                    ${product.price.toFixed(2)}
+                    ${product.price_c?.toFixed(2)}
                   </span>
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap">
                   <span className={`text-sm font-medium ${
-                    product.quantity === 0 ? "text-red-600" : 
-                    product.quantity <= product.minStock ? "text-amber-600" : 
+                    product.quantity_c === 0 ? "text-red-600" : 
+                    product.quantity_c <= product.minStock_c ? "text-amber-600" : 
                     "text-slate-900"
                   }`}>
-                    {product.quantity}
+                    {product.quantity_c}
                   </span>
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap">
-                  <StockBadge quantity={product.quantity} minStock={product.minStock} />
+                  <StockBadge quantity={product.quantity_c} minStock={product.minStock_c} />
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm text-slate-500">
-                  {format(new Date(product.lastUpdated), "MMM d, yyyy")}
+                  {format(new Date(product.lastUpdated_c), "MMM d, yyyy")}
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
                   <div className="flex items-center gap-2">
@@ -110,7 +110,7 @@ const ProductTable = ({ products, onEdit, onDelete, onQuickSale, onStockAdjust }
                       size="sm"
                       variant="outline"
                       onClick={() => onQuickSale(product)}
-                      disabled={product.quantity === 0}
+disabled={product.quantity_c === 0}
                       className="h-8 w-8 p-0"
                       title="Quick Sale"
                     >

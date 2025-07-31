@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { toast } from "react-toastify";
 import ApperIcon from "@/components/ApperIcon";
 import Button from "@/components/atoms/Button";
@@ -16,8 +16,9 @@ import Error from "@/components/ui/Error";
 import Empty from "@/components/ui/Empty";
 import { productService } from "@/services/api/productService";
 import { transactionService } from "@/services/api/transactionService";
-
+import { AuthContext } from "../../App";
 const Dashboard = () => {
+  const { logout } = useContext(AuthContext);
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -128,30 +129,30 @@ const Dashboard = () => {
 
   // Filter and sort products
   const filteredProducts = products
-    .filter(product => {
-      const matchesSearch = product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                           product.sku.toLowerCase().includes(searchQuery.toLowerCase());
-      const matchesCategory = selectedCategory === "" || product.category === selectedCategory;
+.filter(product => {
+      const matchesSearch = product.Name?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                           product.sku_c?.toLowerCase().includes(searchQuery.toLowerCase());
+      const matchesCategory = selectedCategory === "" || product.category_c === selectedCategory;
       return matchesSearch && matchesCategory;
     })
-    .sort((a, b) => {
+.sort((a, b) => {
       switch (sortBy) {
         case "name":
-          return a.name.localeCompare(b.name);
+          return a.Name?.localeCompare(b.Name);
         case "quantity":
-          return b.quantity - a.quantity;
+          return b.quantity_c - a.quantity_c;
         case "price":
-          return b.price - a.price;
+          return b.price_c - a.price_c;
         case "lowStock":
-          return (a.quantity <= a.minStock ? 0 : 1) - (b.quantity <= b.minStock ? 0 : 1);
+          return (a.quantity_c <= a.minStock_c ? 0 : 1) - (b.quantity_c <= b.minStock_c ? 0 : 1);
         default:
           return 0;
       }
     });
 
   // Group products by category for sidebar
-  const productsByCategory = products.reduce((acc, product) => {
-    acc[product.category] = (acc[product.category] || 0) + 1;
+const productsByCategory = products.reduce((acc, product) => {
+    acc[product.category_c] = (acc[product.category_c] || 0) + 1;
     return acc;
   }, {});
 
@@ -172,8 +173,7 @@ const Dashboard = () => {
 
         {/* Main Content */}
         <div className="flex-1 p-6">
-          {/* Header */}
-          <div className="flex flex-col lg:flex-row lg:items-center justify-between mb-8">
+<div className="flex flex-col lg:flex-row lg:items-center justify-between mb-8">
             <div>
               <h1 className="text-3xl font-bold text-slate-900 mb-2">
                 Inventory Dashboard
@@ -182,13 +182,23 @@ const Dashboard = () => {
                 Manage your products and track inventory levels
               </p>
             </div>
-            <Button 
-              onClick={() => setShowProductForm(true)}
-              className="flex items-center gap-2 mt-4 lg:mt-0"
-            >
-              <ApperIcon name="Plus" className="h-4 w-4" />
-              Add Product
-            </Button>
+            <div className="flex items-center gap-4 mt-4 lg:mt-0">
+              <Button 
+                onClick={() => setShowProductForm(true)}
+                className="flex items-center gap-2"
+              >
+                <ApperIcon name="Plus" className="h-4 w-4" />
+                Add Product
+              </Button>
+              <Button 
+                onClick={logout}
+                variant="outline"
+                className="flex items-center gap-2"
+              >
+                <ApperIcon name="LogOut" className="h-4 w-4" />
+                Logout
+              </Button>
+            </div>
           </div>
 
           {/* Stats Cards */}
